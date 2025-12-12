@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;}
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -10,6 +11,7 @@ body {
   line-height: 1.6;
 }
 
+/* HEADER */
 header {
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   color: white;
@@ -23,6 +25,7 @@ header h1 {
   margin-bottom: 10px;
 }
 
+/* NAVIGATION */
 nav {
   margin-top: 10px;
 }
@@ -43,6 +46,7 @@ nav a.active {
   color: #ff4e73;
 }
 
+/* HERO */
 .hero {
   position: relative;
   height: 60vh;
@@ -70,6 +74,7 @@ nav a.active {
   z-index: 2;
 }
 
+/* MAIN CONTENT */
 main {
   padding: 40px 20px;
   max-width: 1100px;
@@ -90,6 +95,7 @@ main p {
   text-align: justify;
 }
 
+/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -127,6 +133,7 @@ main p {
   color: #555;
 }
 
+/* FOOTER */
 footer {
   background: #333;
   color: white;
@@ -135,3 +142,69 @@ footer {
   margin-top: 40px;
 }
 
+/* -----------------------------------------------------
+     ADDITIONS THAT MATCH YOUR JAVASCRIPT FEATURES
+   ----------------------------------------------------- */
+
+/* Back-to-top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 15px;
+  font-size: 22px;
+  background: #ff4e73;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background: #ff325b;
+}
+
+/* Form styling (works on contact page) */
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+form button {
+  background: #ff4e73;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #ff325b;
+}
