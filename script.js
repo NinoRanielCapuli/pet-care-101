@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // BACK TO TOP BUTTON
+  // ===== BACK TO TOP BUTTON =====
   const backToTop = document.createElement("button");
   backToTop.textContent = "↑";
   backToTop.classList.add("back-to-top");
+  backToTop.setAttribute("aria-label", "Back to top");
   backToTop.style.display = "none"; // hidden by default
   document.body.appendChild(backToTop);
 
@@ -14,9 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // SMOOTH SCROLL FOR INTERNAL LINKS (#)
-  const internalLinks = document.querySelectorAll('a[href^="#"]');
-  internalLinks.forEach(link => {
+  // ===== SMOOTH SCROLL FOR INTERNAL LINKS =====
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", (e) => {
       const target = document.querySelector(link.getAttribute("href"));
       if (target) {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // FORM VALIDATION (only runs if form exists)
+  // ===== FORM VALIDATION =====
   const form = document.querySelector("form");
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Email validation
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email.value)) {
         alert("Please enter a valid email address.");
         e.preventDefault();

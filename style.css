@@ -1,7 +1,12 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -46,6 +51,11 @@ nav a.active {
   color: #ff4e73;
 }
 
+nav a:focus {
+  outline: 3px solid #ff758c;
+  outline-offset: 2px;
+}
+
 /* HERO */
 .hero {
   position: relative;
@@ -53,20 +63,12 @@ nav a.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: bold;
   text-align: center;
   background-size: cover;
   background-position: center;
   color: white;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5); 
-  z-index: 1;
 }
 
 .hero span {
@@ -116,10 +118,16 @@ main p {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* Fixed size for all card images */
 .card img {
   width: 100%;
-  height: 180px;
+  height: 250px;  /* Uniform height */
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card h3 {
@@ -142,11 +150,7 @@ footer {
   margin-top: 40px;
 }
 
-/* -----------------------------------------------------
-     ADDITIONS THAT MATCH YOUR JAVASCRIPT FEATURES
-   ----------------------------------------------------- */
-
-/* Back-to-top button */
+/* BACK-TO-TOP BUTTON */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -164,11 +168,13 @@ footer {
   z-index: 999;
 }
 
-.back-to-top:hover {
+.back-to-top:hover,
+.back-to-top:focus {
   background: #ff325b;
+  outline: none;
 }
 
-/* Form styling (works on contact page) */
+/* FORM STYLING */
 form {
   max-width: 600px;
   margin: 30px auto;
@@ -205,6 +211,8 @@ form button {
   transition: 0.3s;
 }
 
-form button:hover {
+form button:hover,
+form button:focus {
   background: #ff325b;
+  outline: none;
 }
